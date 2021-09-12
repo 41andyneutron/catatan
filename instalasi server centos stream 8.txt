@@ -42,3 +42,25 @@
 	- Webadmin : https://[ip_address]:7080
 	- Example : https://[ip_address]:8088
 
+##Install MariaDB
+	- https://mariadb.org/download/
+	- vi /etc/yum.repo.d/MariaDB.repo
+		# MariaDB 10.6 CentOS repository list - created 2021-09-12 23:38 UTC
+		# https://mariadb.org/download/
+		[mariadb]
+		name = MariaDB
+		baseurl = http://mirror.biznetgio.com/mariadb/yum/10.6/centos8-amd64
+		module_hotfixes=1
+		gpgkey=http://mirror.biznetgio.com/mariadb/yum/RPM-GPG-KEY-MariaDB
+		gpgcheck=1
+
+	- $ sudo yum update
+	- $ sudo dnf install MariaDB-server
+	- $ sudo systemctl start mariadb
+	- $ sudo systemctl enable mariadb
+	- $ sudo systemctl status mariadb
+	- $ sudo mariadb-secure-installation
+		bedakan antara password root OS dengan password root MariaDB
+	- login : $ mysql -u root -p
+		gunakan password root MariaDB
+
