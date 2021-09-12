@@ -1,0 +1,44 @@
+##Instalasi Centos 8 Stream
+	- Storage Minimal: 15 GB
+	- Hubungkan Ke Internet
+	- Software Selection: Server With GUI
+	- Additional Software: FTP Server, Security Tools
+
+==== Setelah install OS: koneksi menggunakan putty ssh berhasil
+
+##Installasi OpenLiteSpeed -> https://openlitespeed.org/kb/install-ols-from-litespeed-repositories/
+	- $ sudo yum install epel-release
+	- $ sudo rpm -Uvh http://rpms.litespeedtech.com/centos/litespeed-repo-1.1-1.el8.noarch.rpm
+	- $ sudo yum install openlitespeed
+
+==== Setelah Install OpenLiteSpeed
+	- $ sudo service lsws {start|restart|stop|reload|condrestart|try-restart|status|help} 
+	start       - start web server 
+	stop        - stop web server 
+	restart     - gracefully restart web server with zero down time 
+	reload      - same as restart 
+	condrestart - gracefully restart web server if server is running 
+	try-restart - same as condrestart 
+	status      - show service status 
+	help        - this screen
+
+	- $ sudo cat /usr/local/lsws/adminpasswd
+	- Webadmin : https://localhost:7080
+	- Example : https://localhost:8088
+
+##Konfigurasi Firewall
+	- Cek Status	: $ sudo firewall-cmd --state
+	- Cek List 		: $ sudo firewall-cmd --list-all
+	- + services	: $ sudo firewall-cmd --zone=public --add-service=http
+	- + services	: $ sudo firewall-cmd --zone=public --add-service=https
+	- + source		: $ sudo firewall-cmd --zone=public --add-source=[ip_address]
+	- + port		: $ sudo firewall-cmd --zone=public --add-port=7080/tcp
+	- + port		: $ sudo firewall-cmd --zone=public --add-port=8088/tcp
+					: port default litespeed 7080 dan 8088
+
+	- save			: $ sudo firewall-cmd --runtime-to-permanent
+
+==== setelah konfigurasi firewall: akses webadmin dari luar localhost berhasil
+	- Webadmin : https://[ip_address]:7080
+	- Example : https://[ip_address]:8088
+
