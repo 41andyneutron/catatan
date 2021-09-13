@@ -63,4 +63,6 @@
 		bedakan antara password root OS dengan password root MariaDB
 	- login : $ mysql -u root -p
 		gunakan password root MariaDB
-
+		
+=== setelah install mariadb
+	- + port		: $ sudo firewall-cmd --zone=public --add-port=3306/tcp
