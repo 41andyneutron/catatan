@@ -82,6 +82,10 @@
 		gunakan blowfish string generator
 		tambah baris $cfg['TempDir'] = '/tmp';
 		save
+==alternatif PhpMyAdmin
+	- adminer	: https://www.adminer.org/#download
+	- phpminiadmin		: http://phpminiadmin.sourceforge.net/
+		letakkan di folder yang dapat diakses
 		
 reboot
 ##FINISH##
