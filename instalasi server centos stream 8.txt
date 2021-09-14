@@ -66,3 +66,16 @@
 		
 === setelah install mariadb
 	- + port		: $ sudo firewall-cmd --zone=public --add-port=3306/tcp
+
+##Install PhpMyadmin
+	- $ sudo yum install lsphp73 lsphp73-mysqlnd lsphp73-common lsphp73-gd lsphp73-pdo lsphp73-process lsphp73-mbstring lsphp73-mcrypt lsphp73-opcache lsphp73-bcmath lsphp73-xml lsphp73-soap lsphp73-json -y
+		sesuaikan versi php
+	- download phpmyadmin https://www.phpmyadmin.net/downloads/
+		versi ini phpMyAdmin 5.1.1
+	- extract ke /usr/local/lsws/Example/html
+	- salin file config.sample.inc.php dalam folder phpmyadmin : $ sudo cp config.sample.inc.php config.inc.php
+	- buat folder tmp : $ mkdir tmp && chmod 777 tmp
+	- edit config.inc.php
+		isi baris: $cfg['blowfish_secret'] = ''; /* YOU MUST FILL IN THIS FOR COOKIE AUTH! */  
+		gunakan blowfish string generator
+		tambah baris $cfg['TempDir'] = '/tmp';
