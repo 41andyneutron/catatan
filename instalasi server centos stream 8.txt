@@ -88,7 +88,7 @@
 		letakkan di folder yang dapat diakses
 
 ##Install NGINX
-	* Pastikan openlitespeed tidak aktif, dan disable pada systemctl
+	* Pastikan openlitespeed tidak aktif, dan disable pada systemctl	: $ systemctl list-unit-files
 	- Pilih Repo nginx	: http://nginx.org/en/linux_packages.html
 	- Buat file repo nxinx	: $ sudo vi /etc/yum.repo.d/nginx.repo
 		[nginx-stable]
