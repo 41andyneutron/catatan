@@ -44,7 +44,7 @@
 	- Example : http://[ip_address]:8088
 
 ##Install MariaDB
-	- Download			: https://mariadb.org/download/
+	- Pilih Repo Maria DB		: https://mariadb.org/download/
 	- Buat file repo MariaDB	: $ vi /etc/yum.repo.d/MariaDB.repo
 		# MariaDB 10.6 CentOS repository list - created 2021-09-12 23:38 UTC
 		# https://mariadb.org/download/
@@ -89,3 +89,5 @@
 		
 reboot
 ##FINISH##
+
+*NGINX Proses
