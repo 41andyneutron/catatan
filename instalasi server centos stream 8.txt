@@ -110,7 +110,7 @@
 	- install nginx		: $ sudo dnf install nginx
 ==Instalasi sukses, no error
 
-** Pastikan hanya 1 webserver yang aktif antara
+** Pastikan hanya 1 webserver yang aktif
 		
 reboot
 ##FINISH##
