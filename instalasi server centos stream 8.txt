@@ -76,6 +76,10 @@
 	- salin file config.sample.inc.php dalam folder phpmyadmin : $ sudo cp config.sample.inc.php config.inc.php
 	- buat folder tmp : $ mkdir tmp && chmod 777 tmp
 	- edit config.inc.php
-		isi baris: $cfg['blowfish_secret'] = ''; /* YOU MUST FILL IN THIS FOR COOKIE AUTH! */  
+		isi variable baris: $cfg['blowfish_secret'] = ''; /* YOU MUST FILL IN THIS FOR COOKIE AUTH! */  
 		gunakan blowfish string generator
 		tambah baris $cfg['TempDir'] = '/tmp';
+		save
+		
+reboot
+##FINISH##
