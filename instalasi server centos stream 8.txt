@@ -1,8 +1,9 @@
 ##Instalasi Centos 8 Stream
-	- Storage Minimal: 15 GB
+	- Download file .iso	:http://kartolo.sby.datautama.net.id/Centos/8-stream/isos/x86_64/
+	- Storage Minimal	: 15 GB
 	- Hubungkan Ke Internet
-	- Software Selection: Server With GUI
-	- Additional Software: FTP Server, Security Tools
+	- Software Selection	: Server With GUI
+	- Additional Software	: FTP Server, Security Tools
 
 ==== Setelah install OS: koneksi menggunakan putty ssh berhasil
 
@@ -24,27 +25,27 @@
 
 	- $ sudo cat /usr/local/lsws/adminpasswd
 	- Webadmin : https://localhost:7080
-	- Example : https://localhost:8088
+	- Example : http://localhost:8088
 
 ##Konfigurasi Firewall
 	- Cek Status	: $ sudo firewall-cmd --state
-	- Cek List 		: $ sudo firewall-cmd --list-all
+	- Cek List 	: $ sudo firewall-cmd --list-all
 	- + services	: $ sudo firewall-cmd --zone=public --add-service=http
 	- + services	: $ sudo firewall-cmd --zone=public --add-service=https
-	- + source		: $ sudo firewall-cmd --zone=public --add-source=[ip_address]
-	- + port		: $ sudo firewall-cmd --zone=public --add-port=7080/tcp
-	- + port		: $ sudo firewall-cmd --zone=public --add-port=8088/tcp
-					: port default litespeed 7080 dan 8088
+	- + source	: $ sudo firewall-cmd --zone=public --add-source=[ip_address]
+	- + port	: $ sudo firewall-cmd --zone=public --add-port=7080/tcp
+	- + port	: $ sudo firewall-cmd --zone=public --add-port=8088/tcp
+			: port default litespeed 7080 dan 8088
 
-	- save			: $ sudo firewall-cmd --runtime-to-permanent
+	- save		: $ sudo firewall-cmd --runtime-to-permanent
 
 ==== setelah konfigurasi firewall: akses webadmin dari luar localhost berhasil
 	- Webadmin : https://[ip_address]:7080
-	- Example : https://[ip_address]:8088
+	- Example : http://[ip_address]:8088
 
 ##Install MariaDB
-	- https://mariadb.org/download/
-	- vi /etc/yum.repo.d/MariaDB.repo
+	- Download			: https://mariadb.org/download/
+	- Buat file reoi MariaDB	: $ vi /etc/yum.repo.d/MariaDB.repo
 		# MariaDB 10.6 CentOS repository list - created 2021-09-12 23:38 UTC
 		# https://mariadb.org/download/
 		[mariadb]
@@ -66,7 +67,8 @@
 		
 === setelah install mariadb
 	- + port		: $ sudo firewall-cmd --zone=public --add-port=3306/tcp
-
+		akses dari luar localhost
+		
 ##Install PhpMyadmin
 	- $ sudo yum install lsphp73 lsphp73-mysqlnd lsphp73-common lsphp73-gd lsphp73-pdo lsphp73-process lsphp73-mbstring lsphp73-mcrypt lsphp73-opcache lsphp73-bcmath lsphp73-xml lsphp73-soap lsphp73-json -y
 		sesuaikan versi php
