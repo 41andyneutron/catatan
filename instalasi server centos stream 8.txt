@@ -86,8 +86,31 @@
 	- adminer	: https://www.adminer.org/#download
 	- phpminiadmin		: http://phpminiadmin.sourceforge.net/
 		letakkan di folder yang dapat diakses
+
+##Install NGINX
+	* Pastikan openlitespeed tidak aktif, dan disable pada systemctl
+	- Pilih Repo nginx	: http://nginx.org/en/linux_packages.html
+	- Buat file repo nxinx	: $ sudo vi /etc/yum.repo.d/nginx.repo
+		[nginx-stable]
+		name=nginx stable repo
+		baseurl=http://nginx.org/packages/centos/$releasever/$basearch/
+		gpgcheck=1
+		enabled=1
+		gpgkey=https://nginx.org/keys/nginx_signing.key
+		module_hotfixes=true
+
+		[nginx-mainline]
+		name=nginx mainline repo
+		baseurl=http://nginx.org/packages/mainline/centos/$releasever/$basearch/
+		gpgcheck=1
+		enabled=0
+		gpgkey=https://nginx.org/keys/nginx_signing.key
+		module_hotfixes=true
+	- update yum		: $ yum update
+	- install nginx		: $ sudo dnf install nginx
+==Instalasi sukses, no error
+
+** Pastikan hanya 1 webserver yang aktif antara
 		
 reboot
 ##FINISH##
-
-*NGINX Proses
